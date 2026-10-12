@@ -1,0 +1,45 @@
+{
+  "_notice": "SYNTHETIC TEST DATA ONLY. Lists, names and articles are fictitious.",
+  "hits": [
+    {
+      "record_id": "SCR-1001-AM-01",
+      "customer_id": "CUST-1001",
+      "timestamp": "2026-09-14T06:05:00+00:00",
+      "list_type": "adverse_media",
+      "matched_name": "Alpha Trading LLC (SYNTHETIC)",
+      "match_score": 0.62,
+      "status": "open",
+      "detail": "Synthetic article: trading firm named in a customs under-invoicing inquiry (fictitious)."
+    },
+    {
+      "record_id": "SCR-2002-PEP-01",
+      "customer_id": "CUST-2002",
+      "timestamp": "2026-09-20T06:05:00+00:00",
+      "list_type": "pep",
+      "matched_name": "Beta Individual (SYNTHETIC)",
+      "match_score": 0.91,
+      "status": "confirmed",
+      "detail": "Close family member of PEP-0001 (synthetic senior public official)."
+    },
+    {
+      "record_id": "SCR-2002-PEP-02",
+      "customer_id": "CUST-2002",
+      "timestamp": "2026-09-20T06:05:00+00:00",
+      "list_type": "pep_associated_entity",
+      "matched_name": "Beta Family Holdings (SYNTHETIC)",
+      "match_score": 0.88,
+      "status": "confirmed",
+      "detail": "Counterparty entity beneficially owned by PEP-0001's family (synthetic)."
+    },
+    {
+      "record_id": "SCR-3003-SAN-01",
+      "customer_id": "CUST-3003",
+      "timestamp": "2026-09-25T06:05:00+00:00",
+      "list_type": "sanctions",
+      "matched_name": "G. Individual (synthetic list entry)",
+      "match_score": 0.41,
+      "status": "discounted",
+      "detail": "Partial name match; date of birth and nationality do not match. Discounted as false positive."
+    }
+  ]
+}

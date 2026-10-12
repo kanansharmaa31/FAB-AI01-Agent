@@ -1,0 +1,75 @@
+{
+  "_notice": "SYNTHETIC POLICY TEXT written for testing. Not FAB policy and not an authoritative statement of UAE law.",
+  "passages": [
+    {
+      "record_id": "SYN-POL-AML-001#3.2",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "3.2 Structuring red flags",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["structuring", "cash", "threshold", "deposits", "smurfing", "branches"],
+      "text": "Repeated cash deposits just below an internal review threshold, particularly across multiple branches within a short period, are a structuring red flag and should be assessed against the customer's expected cash activity."
+    },
+    {
+      "record_id": "SYN-POL-AML-001#3.5",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "3.5 High-risk jurisdictions and round-tripping",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["jurisdiction", "offshore", "round-tripping", "wire", "high-risk", "counterparty"],
+      "text": "Funds moved to and returned from the same counterparty in a high-risk jurisdiction without a documented commercial rationale indicate possible round-tripping and require enhanced review."
+    },
+    {
+      "record_id": "SYN-POL-AML-001#4.1",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "4.1 Politically exposed persons",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["pep", "politically", "exposed", "edd", "source of wealth", "family"],
+      "text": "Relationships with PEPs, their family members and close associates require enhanced due diligence, senior management approval and verification of source of wealth and source of funds before large transactions are accepted."
+    },
+    {
+      "record_id": "SYN-POL-AML-001#6.1",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "6.1 Internal suspicious transaction reporting",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["istr", "report", "mlro", "suspicion", "escalate", "decision"],
+      "text": "Analysts raise an internal suspicious transaction report to the MLRO when reasonable grounds for suspicion exist. The MLRO alone decides whether any external report is made."
+    },
+    {
+      "record_id": "SYN-POL-AML-001#6.4",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "6.4 Tipping-off prohibition",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["tipping", "tipping-off", "disclose", "customer", "confidential"],
+      "text": "Staff must not disclose to the customer or any third party that an internal report, investigation or external report is being considered or has been made."
+    },
+    {
+      "record_id": "SYN-POL-AML-001#7.2",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "7.2 Alert closure - false positives",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["false positive", "closure", "close", "documented", "explained", "velocity", "bonus"],
+      "text": "An alert may be recommended for closure when the activity is consistent with documented, verified customer information (e.g. a bonus letter or sale-and-purchase agreement) and no other red flags remain."
+    },
+    {
+      "record_id": "SYN-POL-AML-001#8.1",
+      "doc_id": "SYN-POL-AML-001",
+      "title": "Internal AML/CFT Policy (SYNTHETIC)",
+      "section": "8.1 Record keeping and evidence",
+      "effective_date": "2026-01-01",
+      "timestamp": "2026-01-01T00:00:00+00:00",
+      "keywords": ["record", "evidence", "audit", "retention", "citation"],
+      "text": "Each investigative conclusion must reference the underlying records relied upon so that the MLRO and auditors can reproduce the assessment."
+    }
+  ]
+}

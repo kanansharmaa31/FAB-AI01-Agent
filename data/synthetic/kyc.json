@@ -1,0 +1,58 @@
+{
+  "_notice": "SYNTHETIC TEST DATA ONLY.",
+  "profiles": [
+    {
+      "record_id": "KYC-1001",
+      "customer_id": "CUST-1001",
+      "timestamp": "2026-03-01T00:00:00+00:00",
+      "customer_type": "legal_entity",
+      "business_activity": "General trading - electronics wholesale (synthetic)",
+      "risk_rating": "medium",
+      "cdd_level": "standard",
+      "last_review_date": "2025-03-01",
+      "next_review_due": "2027-03-01",
+      "expected_monthly_credit_turnover_aed": 120000,
+      "expected_cash_share_pct": 10,
+      "expected_jurisdictions": ["AE"],
+      "source_of_funds": "Trade receivables",
+      "pep_flag": false,
+      "beneficial_owners": ["UBO-1001-A (SYNTHETIC)"]
+    },
+    {
+      "record_id": "KYC-2002",
+      "customer_id": "CUST-2002",
+      "timestamp": "2026-06-10T00:00:00+00:00",
+      "customer_type": "individual",
+      "business_activity": "Private investor (synthetic)",
+      "risk_rating": "high",
+      "cdd_level": "enhanced",
+      "last_review_date": "2026-06-10",
+      "next_review_due": "2027-06-10",
+      "expected_monthly_credit_turnover_aed": 400000,
+      "expected_cash_share_pct": 0,
+      "expected_jurisdictions": ["AE"],
+      "source_of_funds": "Family wealth - documentation pending (synthetic)",
+      "pep_flag": true,
+      "pep_relationship": "Close family member of a synthetic senior public official (PEP-0001)",
+      "beneficial_owners": []
+    },
+    {
+      "record_id": "KYC-3003",
+      "customer_id": "CUST-3003",
+      "timestamp": "2026-01-15T00:00:00+00:00",
+      "customer_type": "individual",
+      "business_activity": "Salaried employee - Kappa Employer Co (synthetic)",
+      "risk_rating": "low",
+      "cdd_level": "simplified",
+      "last_review_date": "2026-01-15",
+      "next_review_due": "2029-01-15",
+      "expected_monthly_credit_turnover_aed": 40000,
+      "expected_cash_share_pct": 0,
+      "expected_jurisdictions": ["AE"],
+      "source_of_funds": "Salary and annual bonus",
+      "pep_flag": false,
+      "supporting_documents": ["DOC-3003-BONUS-LETTER (synthetic)", "DOC-3003-SPA-PROPERTY (synthetic)"],
+      "beneficial_owners": []
+    }
+  ]
+}

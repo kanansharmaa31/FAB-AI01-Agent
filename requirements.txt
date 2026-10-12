@@ -1,0 +1,49 @@
+# =============================================================================
+# ISTR Agent Mesh (FAB GERNAS AI-01) - runtime + test requirements
+# Python: 3.13
+# Install (short venv path avoids Windows MAX_PATH issues):
+#   py -3.13 -m venv .venv
+#   .venv\Scripts\pip install --pre -r requirements.txt
+#
+# Pinned like the reference agent-mesh repo; only what this codebase imports.
+# =============================================================================
+
+# --- Microsoft Agent Framework (MAF) core + extensions ----------------------
+agent-framework-core>=1.9.0
+agent-framework-a2a>=1.0.0b260604
+agent-framework-openai>=1.8.2
+agent-framework-devui>=1.0.0b260528
+agent-framework-orchestrations>=1.0.0
+a2a-sdk>=1.1.0
+# Optional provider extensions (install only the one FAB approves):
+#   agent-framework-foundry>=1.8.2      # LLM_PROVIDER=foundry
+#   agent-framework-anthropic>=1.0.0b260618  # LLM_PROVIDER=anthropic
+#   agent-framework-ollama>=1.0.0b260521     # LLM_PROVIDER=ollama
+
+# --- MCP ----------------------------------------------------------------------
+# MAF's MCP client declares mcp<2 (mcp 2.x renamed FastMCP -> MCPServer).
+mcp[cli]>=1.28.0,<2
+
+# --- ASGI / API -----------------------------------------------------------------
+fastapi>=0.133.0
+uvicorn[standard]>=0.49.0
+starlette>=1.3.1
+sse-starlette>=3.4.5
+httpx>=0.28.1
+
+# --- Data validation / config -------------------------------------------------
+pydantic>=2.13.4
+pyyaml>=6.0.3
+python-dotenv>=1.2.2
+
+# --- Observability (MAF-native OpenTelemetry) --------------------------------
+opentelemetry-api>=1.42.1
+opentelemetry-sdk>=1.42.1
+# Optional: OTLP export / cross-process A2A trace propagation / Opik
+#   opentelemetry-exporter-otlp-proto-http>=1.42.1
+#   opentelemetry-instrumentation-httpx>=0.63b1
+#   opik>=1.8.0
+
+# --- Testing ----------------------------------------------------------------------
+pytest>=9.0.3
+pytest-asyncio>=0.23.0

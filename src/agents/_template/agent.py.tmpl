@@ -1,0 +1,46 @@
+"""[[ public_name ]] (`[[ name ]]`, kind: [[ kind ]]).
+
+[[ description ]]
+
+Files in this folder:
+    agent.py         this module: the Python entry point (and home for agent-only tools)
+    agent.spec.yaml  configuration: tools, model profile, port, middleware, guardrails
+    prompt.md        instructions (ISTR-wide rules are appended automatically)
+
+The agent is built by the shared AgentFactory from agent.spec.yaml + prompt.md,
+so model client, tools, middleware and guardrails are wired the same way for
+every agent. Equivalent of the reference repo's ``get_<x>_agent()`` builders.
+
+Agent-only tools: define them below with ``@tool`` and list them in
+agent.spec.yaml, e.g. ``- {type: function, ref: "src.agents.[[ name ]].agent:my_tool"}``.
+Tools shared by several agents belong in ``src/tools/`` instead.
+"""
+from __future__ import annotations
+
+from typing import Any
+
+from agent_framework import Agent
+
+from src.factory.agent_factory import default_factory
+
+NAME = "[[ name ]]"
+
+
+def get_[[ name ]]_agent(log_path: str | None = None, mcp_tools: dict[str, Any] | None = None) -> Agent:
+    """Builds the [[ public_name ]].
+
+    Args:
+        log_path: optional audit log path (defaults to AUDIT_LOG_FILE).
+        mcp_tools: connected MCP tools by service name; a2a_server.py passes these.
+            When omitted, MCP tools are created unconnected.
+    """
+    return default_factory().create(NAME, log_path=log_path, mcp_tools=mcp_tools)
+
+
+# Agent-only tools (optional). Example:
+#
+# from agent_framework import tool
+#
+# @tool(description="What it returns and when to use it.")
+# def my_tool(customer_id: str) -> dict:
+#     return {"tool": "my_tool", "found": True, "citations": [...]}

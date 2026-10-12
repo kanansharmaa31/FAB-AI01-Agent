@@ -1,0 +1,55 @@
+# REFERENCE AGENT: shows the structure of a specialist. Copy it, or use scripts/new_agent.py.
+# Field reference: docs/BASE_CODE_GUIDE.md section 5.
+name: example_specialist
+public_name: ExampleSpecialistAgent
+description: >-
+  Reference specialist: looks up the case, checks the alert's age and runs transaction
+  pattern checks, returning cited findings. Demonstrates the three tool styles.
+version: 0.1.0
+owner: gernas-ai01-team
+kind: mcp_thin                    # specialist | mcp_thin | coordinator | guardrail
+
+instructions_file: prompt.md
+prompt_vars: {}
+includes: [istr_rules]
+
+model:
+  profile: default                # env EXAMPLE_SPECIALIST_MODEL overrides
+  temperature: 0.0
+
+tools:
+  # 1. Shared function tool (src/tools/): usable by any agent.
+  - {type: function, ref: "src.tools.istr_tools:get_case_summary"}
+  # 2. Agent-only function tool, defined in this folder's agent.py.
+  - {type: function, ref: "src.agents.example_specialist.agent:check_alert_age"}
+  # 3. MCP tools: only the tools in `allow` are visible to the model (least privilege).
+  - type: mcp
+    service: transactions
+    allow: [detect_patterns, get_counterparties]
+
+middleware: [audit, tipping_off, token_budget]
+max_tool_calls: 8
+
+guardrails:
+  input: [prompt_injection]
+  output: [tipping_off, guilt_language, filing_action]
+  pii_redaction: true
+
+memory:
+  enabled: false
+  backend: jsonl
+  max_turns: 3
+
+output_schema: null
+reasoning_trace: true
+
+a2a:
+  port: 8021                      # env PORT_EXAMPLE_SPECIALIST overrides
+  skills:
+    - id: example_findings
+      name: Example cited findings
+      description: Case lookup + transaction pattern checks with citations.
+
+observability:
+  span_name: istr.example_specialist
+  tags: [istr, example, mcp_thin]

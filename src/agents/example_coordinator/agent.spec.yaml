@@ -1,0 +1,50 @@
+# REFERENCE AGENT: shows the structure of a coordinator (delegates to other agents over A2A).
+# The workflow calls the node named in WORKFLOW_COORDINATOR_NODE (default: this one).
+name: example_coordinator
+public_name: ExampleCoordinatorAgent
+description: >-
+  Reference coordinator: delegates evidence gathering to specialist agents over A2A and
+  assembles a cited DRAFT ISTR (status PENDING_MLRO_REVIEW) for MLRO review.
+version: 0.1.0
+owner: gernas-ai01-team
+kind: coordinator
+
+instructions_file: prompt.md
+prompt_vars:
+  report_status: PENDING_MLRO_REVIEW
+includes: [istr_rules]
+
+model:
+  profile: reasoning
+  temperature: 0.1
+
+tools:
+  # Each a2a_peer becomes a consult_<node> tool. Add one line per specialist.
+  - {type: a2a_peer, node: example_specialist, max_depth: 1}
+
+middleware: [audit, tipping_off, token_budget]
+max_tool_calls: 15
+
+guardrails:
+  input: [prompt_injection]
+  output: [tipping_off, guilt_language, filing_action]
+  pii_redaction: true
+
+memory:
+  enabled: true
+  backend: jsonl
+  max_turns: 3
+
+output_schema: src.schemas.istr.ISTRDraft   # its JSON schema is appended to the prompt
+reasoning_trace: true
+
+a2a:
+  port: 8020
+  skills:
+    - id: istr_investigation
+      name: ISTR investigation
+      description: Investigate a case and return a cited draft ISTR for MLRO review.
+
+observability:
+  span_name: istr.example_coordinator
+  tags: [istr, example, coordinator]

@@ -1,0 +1,53 @@
+{
+  "_notice": "SYNTHETIC TEST DATA ONLY. No real customers, accounts, transactions or FAB documents.",
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "alert_id": "ALT-90001",
+      "record_id": "ALT-90001",
+      "alert_date": "2026-09-14T06:00:00+00:00",
+      "alert_typology": "structuring",
+      "triggering_rule": "TM-STR-03: >=3 cash deposits between AED 45,000 and 55,000 within 10 days",
+      "alert_summary": "Repeated cash deposits just below the internal review threshold across multiple branches, followed by outward wires to a high-risk jurisdiction.",
+      "subject": {
+        "customer_id": "CUST-1001",
+        "display_name": "Alpha Trading LLC (SYNTHETIC)",
+        "segment": "SME",
+        "accounts": ["ACC-1001-01"]
+      },
+      "expected_outcome": "escalate"
+    },
+    {
+      "case_id": "CASE-002",
+      "alert_id": "ALT-90002",
+      "record_id": "ALT-90002",
+      "alert_date": "2026-09-20T06:00:00+00:00",
+      "alert_typology": "pep_exposure",
+      "triggering_rule": "TM-PEP-01: high-value inbound wire from a PEP-associated entity",
+      "alert_summary": "Single large inbound wire from a family holding entity linked to a politically exposed person, rapidly moved to a property developer.",
+      "subject": {
+        "customer_id": "CUST-2002",
+        "display_name": "Beta Individual (SYNTHETIC)",
+        "segment": "Private Banking",
+        "accounts": ["ACC-2002-01"]
+      },
+      "expected_outcome": "request_info"
+    },
+    {
+      "case_id": "CASE-003",
+      "alert_id": "ALT-90003",
+      "record_id": "ALT-90003",
+      "alert_date": "2026-09-25T06:00:00+00:00",
+      "alert_typology": "velocity",
+      "triggering_rule": "TM-VEL-02: 30-day credit turnover > 3x 90-day baseline",
+      "alert_summary": "Spike in credit turnover versus the 90-day baseline, followed by a large outward payment.",
+      "subject": {
+        "customer_id": "CUST-3003",
+        "display_name": "Gamma Individual (SYNTHETIC)",
+        "segment": "Retail Payroll",
+        "accounts": ["ACC-3003-01"]
+      },
+      "expected_outcome": "close"
+    }
+  ]
+}

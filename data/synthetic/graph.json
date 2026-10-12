@@ -1,0 +1,25 @@
+{
+  "_notice": "SYNTHETIC TEST DATA ONLY.",
+  "entities": {
+    "CUST-1001": {"label": "Alpha Trading LLC (SYNTHETIC)", "type": "company"},
+    "ENT-1999": {"label": "Delta Shell Co (SYNTHETIC)", "type": "company"},
+    "ENT-OMEGA": {"label": "Omega Offshore Holdings Ltd (SYNTHETIC)", "type": "company"},
+    "UBO-1001-A": {"label": "UBO-1001-A (SYNTHETIC)", "type": "person"},
+    "CUST-2002": {"label": "Beta Individual (SYNTHETIC)", "type": "person"},
+    "PEP-0001": {"label": "Synthetic senior public official", "type": "person"},
+    "ENT-BETA-FH": {"label": "Beta Family Holdings (SYNTHETIC)", "type": "company"},
+    "ENT-SIGMA": {"label": "Sigma Developments PJSC (SYNTHETIC)", "type": "company"},
+    "CUST-3003": {"label": "Gamma Individual (SYNTHETIC)", "type": "person"},
+    "ENT-KAPPA": {"label": "Kappa Employer Co (SYNTHETIC)", "type": "company"}
+  },
+  "edges": [
+    {"record_id": "GRF-0001", "timestamp": "2026-09-14T06:10:00+00:00", "source": "CUST-1001", "target": "ENT-1999", "relation": "shares_registered_address", "weight": 0.8},
+    {"record_id": "GRF-0002", "timestamp": "2026-09-14T06:10:00+00:00", "source": "UBO-1001-A", "target": "CUST-1001", "relation": "beneficial_owner_of", "weight": 1.0},
+    {"record_id": "GRF-0003", "timestamp": "2026-09-14T06:10:00+00:00", "source": "UBO-1001-A", "target": "ENT-OMEGA", "relation": "director_of", "weight": 0.9},
+    {"record_id": "GRF-0004", "timestamp": "2026-09-14T06:10:00+00:00", "source": "CUST-1001", "target": "ENT-OMEGA", "relation": "payment_counterparty", "weight": 0.7},
+    {"record_id": "GRF-0101", "timestamp": "2026-09-20T06:10:00+00:00", "source": "CUST-2002", "target": "PEP-0001", "relation": "close_family_member_of", "weight": 1.0},
+    {"record_id": "GRF-0102", "timestamp": "2026-09-20T06:10:00+00:00", "source": "PEP-0001", "target": "ENT-BETA-FH", "relation": "beneficial_owner_of", "weight": 0.9},
+    {"record_id": "GRF-0103", "timestamp": "2026-09-20T06:10:00+00:00", "source": "CUST-2002", "target": "ENT-SIGMA", "relation": "payment_counterparty", "weight": 0.6},
+    {"record_id": "GRF-0201", "timestamp": "2026-09-25T06:10:00+00:00", "source": "CUST-3003", "target": "ENT-KAPPA", "relation": "employee_of", "weight": 1.0}
+  ]
+}
